@@ -6,8 +6,7 @@ public class StatePatternsApplicationAutoMapperProfile : Profile
 {
     public StatePatternsApplicationAutoMapperProfile()
     {
-        /* You can configure your AutoMapper mapping configuration here.
-         * Alternatively, you can split your mapping configurations
-         * into multiple profile classes for a better organization. */
+        CreateMap<Invoices.Invoice, Invoices.DTOs.InvoiceDto>()
+            .ForMember(x => x.State, z => z.MapFrom(q => q.State.ToString()));
     }
 }
